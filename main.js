@@ -2,8 +2,8 @@
 const products = [
     {
         id: 1,
-        name: "Arete estrella",
-        description: " Elegantes aretes de plata artesanal con perlas naturales, el accesorio perfecto para realzar tu brillo cotidiano.",
+        name: "Arete corazon",
+        description: " Corazones dorados que conquistan miradas. Estos aretes con diseño de corazón brillante son el regalo perfecto para demostrar amor. Acabado premium, estilo único. ¡Ideal para San Valentín o cualquier ocasión especial! Precio increíble que no puedes rechazar.",
         price: 5,
         category: "Aretes",
         image: "imagenes/arete2.jpg",
@@ -12,8 +12,8 @@ const products = [
     },
     {
         id: 2,
-        name: "Anillo plateado",
-        description: "Elegante anillo de oro de 18k con diamante central, perfecto para sellar un compromiso inolvidable.",
+        name: "Anillo nudo",
+        description: "Elegancia atemporal en tus manos. Este anillo plateado con diseño de nudo simboliza amor eterno. Acabado brillante, calidad premium. Perfecto para regalar o consentirte. ¡Destaca con estilo único que nunca pasa de moda!",
         price: 5,
         category: "Anillos",
         image: "imagenes/anillo2.jpg",
@@ -21,8 +21,8 @@ const products = [
     },
     {
         id: 3,
-        name: "Manilla 16",
-        description: "Elegante manilla de cuero artesanal con broche magnético, el accesorio perfecto para resaltar tu estilo diario.",
+        name: "Manilla cristal",
+        description: "Brillo que enamora a primera vista. Esta manilla dorada con cristal central irradia elegancia y sofisticación. Diseño versátil para cualquier ocasión. Calidad premium que resalta tu estilo único. ¡El accesorio perfecto que complementará todos tus looks!",
         price: 10,
         category: "Manillas",
         image: "imagenes/manilla1.jpg",
@@ -30,8 +30,8 @@ const products = [
     },
     {
         id: 4,
-        name: "Llavero",
-        description: "Elegante llavero de cuero artesanal con broche magnético, el accesorio perfecto para resaltar tu estilo diario.",
+        name: "Llavero snoopy",
+        description: "¡Lleva a Snoopy contigo siempre! Este adorable llavero artesanal captura la ternura de tu personaje favorito. Calidad premium, diseño único y ese toque de nostalgia que enamora. ¡Perfecto regalo para fans de todas las edades!",
         price: 10,
         category: "Llaveros",
         image: "imagenes/stich.jpg",
@@ -39,8 +39,8 @@ const products = [
     },
      {
         id: 5,
-        name: "Llavero",
-        description: "Elegante llavero de cuero artesanal con broche magnético, el accesorio perfecto para resaltar tu estilo diario.",
+        name: "Llavero Stich",
+        description: "Lleva contigo la ternura de Stitch en un llavero irresistible, colorido y coleccionable que roba miradas, transmite alegría y convierte cada detalle cotidiano en un toque único de magia.",
         price: 10,
         category: "Llaveros",
         image: "imagenes/llavero1.jpg",
