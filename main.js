@@ -448,9 +448,9 @@ function confirmOrder() {
     whatsappMessage += `• *TOTAL A PAGAR: Bs. ${total.toFixed(2)}*\n\n`;
     
     whatsappMessage += `*INSTRUCCIONES:*\n`;
-    whatsappMessage += `1. Confirmar disponibilidad de productos\n`;
-    whatsappMessage += `2. Indicar métodos de pago disponibles\n`;
-    whatsappMessage += `3. Coordinar envío y tiempo de entrega\n\n`;
+    whatsappMessage += `1. Realize el pago al Codigo QR que le enviaremos\n`;
+    whatsappMessage += `2. Se coordinara el dia de entrega en el grupo - Unase por Favor\n`;
+    whatsappMessage += `3. Muchas gracias por su compra.\n\n`;
     
     whatsappMessage += ` *Fecha y hora:* ${new Date().toLocaleString('es-BO')}\n`;
     whatsappMessage += ` *Número de pedido:* ${orderNumber}`;
