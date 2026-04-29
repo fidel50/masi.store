@@ -34,7 +34,7 @@ const products = [
         description: "¡Lleva a Snoopy contigo siempre! Este adorable llavero artesanal captura la ternura de tu personaje favorito. Calidad premium, diseño único y ese toque de nostalgia que enamora. ¡Perfecto regalo para fans de todas las edades!",
         price: 10,
         category: "Llaveros",
-        image: "imagenes/stich.jpg",
+        image: "imagenes/llavero1.jpg",
         stock: 12 
     },
      {
@@ -43,7 +43,7 @@ const products = [
         description: "Lleva contigo la ternura de Stitch en un llavero irresistible, colorido y coleccionable que roba miradas, transmite alegría y convierte cada detalle cotidiano en un toque único de magia.",
         price: 10,
         category: "Llaveros",
-        image: "imagenes/llavero1.jpg",
+        image: "imagenes/stich.jpg",
         stock: 12 
     },
 ];
