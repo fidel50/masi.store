@@ -419,17 +419,17 @@ function confirmOrder() {
     const total = subtotal - discount + SHIPPING_COST;
     
     // Generar número de pedido
-    const orderNumber = 'BR-' + Date.now().toString().slice(-6);
+    const orderNumber = 'MS-' + Date.now().toString().slice(-6);
     
     // Construir mensaje de WhatsApp
-    let whatsappMessage = `¡Hola Bolivia Robotics! \n\n`;
+    let whatsappMessage = `¡Hola Magi.Store! \n\n`;
     whatsappMessage += `*NUEVO PEDIDO - ${orderNumber}*\n\n`;
     whatsappMessage += `*DATOS DEL CLIENTE:*\n`;
     whatsappMessage += `• Nombre: ${name}\n`;
     whatsappMessage += `• Teléfono: ${phone}\n`;
     whatsappMessage += `• Correo: ${email}\n`;
     whatsappMessage += `• Dirección: ${address}\n`;
-    whatsappMessage += `• Notas: ${notes}\n\n`;
+    whatsappMessage += `• Lugar de Recojo: ${notes}\n\n`;
     
     whatsappMessage += `*PRODUCTOS PEDIDOS:*\n`;
     cart.forEach((item, index) => {
@@ -459,7 +459,7 @@ function confirmOrder() {
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
     // Número de WhatsApp
-    const whatsappNumber = "59167128415"; 
+    const whatsappNumber = "59167185356"; 
     
     // Crear URL de WhatsApp
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
