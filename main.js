@@ -404,11 +404,12 @@ function confirmOrder() {
     // Validar formulario
     const name = document.getElementById('customerName').value;
     const phone = document.getElementById('customerPhone').value;
-    const address = document.getElementById('customerAddress').value;
+    //const address = document.getElementById('customerAddress').value;
     const email = document.getElementById('customerEmail').value || 'No especificado';
-    const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
+    //const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
+    const recojo = document.getElementById('point1').value || document.getElementById('point2').value || document.getElementById('point3').value;
     
-    if (!name || !phone || !address) {
+    if (!name || !phone || !recojo) {
         alert('Por favor completa todos los campos obligatorios (*)');
         return;
     }
@@ -428,8 +429,9 @@ function confirmOrder() {
     whatsappMessage += `• Nombre: ${name}\n`;
     whatsappMessage += `• Teléfono: ${phone}\n`;
     whatsappMessage += `• Correo: ${email}\n`;
-    whatsappMessage += `• Dirección: ${address}\n`;
-    whatsappMessage += `• Lugar de Recojo: ${notes}\n\n`;
+    whatsappMessage += `• Punto de Recojo: ${recojo}\n\n`;
+    //whatsappMessage += `• Dirección: ${address}\n`;
+    //whatsappMessage += `• Lugar de Recojo: ${notes}\n\n`;
     
     whatsappMessage += `*PRODUCTOS PEDIDOS:*\n`;
     cart.forEach((item, index) => {
