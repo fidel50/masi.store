@@ -408,11 +408,11 @@ function confirmOrder() {
     const email = document.getElementById('customerEmail').value || 'No especificado';
     //const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
     const deliveryOptions = document.querySelectorAll('input[name="deliveryPoint"]');
-    const selectedDeliveryPoint = document.getElementById('selectedDeliveryPoint');
+    //const selectedDeliveryPoint = document.getElementById('selectedDeliveryPoint');
     const recojo="";
     deliveryOptions.forEach(option => {
         option.addEventListener('change', function () {
-            selectedDeliveryPoint.textContent = "Elegiste: " + this.value;
+            //selectedDeliveryPoint.textContent = "Elegiste: " + this.value;
             recojo = this.value; // aquí puedes usar el valor
         });
     });
