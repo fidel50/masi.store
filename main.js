@@ -409,13 +409,14 @@ function confirmOrder() {
     //const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
     const deliveryOptions = document.querySelectorAll('input[name="deliveryPoint"]');
     //const selectedDeliveryPoint = document.getElementById('selectedDeliveryPoint');
-    const recojo;
+    alert(deliveryOptions);
+    /*const recojo;
     deliveryOptions.forEach(option => {
         option.addEventListener('change', function () {
             //selectedDeliveryPoint.textContent = "Elegiste: " + this.value;
             recojo = this.value; // aquí puedes usar el valor
         });
-    });
+    });*/
     
     if (!name || !phone) {
         alert('Por favor completa todos los campos obligatorios (*)');
