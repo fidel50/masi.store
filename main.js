@@ -407,7 +407,7 @@ function confirmOrder() {
     //const address = document.getElementById('customerAddress').value;
     const email = document.getElementById('customerEmail').value || 'No especificado';
     //const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
-    const recojo = document.getElementById('point3').value || document.getElementById('point2').value || document.getElementById('point1').value;
+    const recojo = ((document.getElementById('point3').value) || (document.getElementById('point2').value) || (document.getElementById('point1').value));
     
     if (!name || !phone || !recojo) {
         alert('Por favor completa todos los campos obligatorios (*)');
