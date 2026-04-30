@@ -409,7 +409,7 @@ function confirmOrder() {
     //const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
     const deliveryOptions = document.querySelectorAll('input[name="deliveryPoint"]');
     //const selectedDeliveryPoint = document.getElementById('selectedDeliveryPoint');
-    const recojo="";
+    const recojo;
     deliveryOptions.forEach(option => {
         option.addEventListener('change', function () {
             //selectedDeliveryPoint.textContent = "Elegiste: " + this.value;
