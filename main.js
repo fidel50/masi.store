@@ -417,7 +417,7 @@ function confirmOrder() {
         });
     });
     
-    if (!name || !phone || !recojo) {
+    if (!name || !phone) {
         alert('Por favor completa todos los campos obligatorios (*)');
         return;
     }
