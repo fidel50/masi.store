@@ -50,7 +50,7 @@ const products = [
 
 // Carrito de compras
 let cart = [];
-const SHIPPING_COST = 15;
+const SHIPPING_COST = 0;
 
 // Inicialización al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
@@ -446,7 +446,7 @@ function confirmOrder() {
     if (discount > 0) {
         whatsappMessage += `• Descuento (10%): Bs. ${discount.toFixed(2)}\n`;
     }
-    whatsappMessage += `• Costo de envío: Bs. ${SHIPPING_COST.toFixed(2)}\n`;
+    whatsappMessage += `• Costo de envío o Recojo: Bs. ${SHIPPING_COST.toFixed(2)}\n`;
     whatsappMessage += `• *TOTAL A PAGAR: Bs. ${total.toFixed(2)}*\n\n`;
     
     whatsappMessage += `*INSTRUCCIONES:*\n`;
