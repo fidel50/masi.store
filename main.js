@@ -407,27 +407,22 @@ function confirmOrder() {
     //const address = document.getElementById('customerAddress').value;
     const email = document.getElementById('customerEmail').value || 'No especificado';
     //const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
-    const recojo1 = document.getElementById('point3').value;
-    const recojo2 = document.getElementById('point2').value; 
-    const recojo3 = document.getElementById('point1').value;
+    const deliveryOptions = document.querySelectorAll('input[name="deliveryPoint"]');
+    const selectedDeliveryPoint = document.getElementById('selectedDeliveryPoint');
+
+    deliveryOptions.forEach(option => {
+        option.addEventListener('change', function () {
+            selectedDeliveryPoint.textContent = "Elegiste: " + this.value;
+            const recojo = this.value; // aquí puedes usar el valor
+        });
+    });
     
     if (!name || !phone || !recojo) {
         alert('Por favor completa todos los campos obligatorios (*)');
         return;
     }
     
-    if (recojo1==true) {
-        recojo=recojo1;
-        return;
-    }
-    if (recojo2==true) {
-        recojo=recojo2;
-        return;
-    }
-    if (recojo3==true) {
-        recojo=recojo3;
-        return;
-    }
+    
     
     // Calcular total
     const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
