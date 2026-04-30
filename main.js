@@ -407,10 +407,25 @@ function confirmOrder() {
     //const address = document.getElementById('customerAddress').value;
     const email = document.getElementById('customerEmail').value || 'No especificado';
     //const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
-    const recojo = ((document.getElementById('point3').value) || (document.getElementById('point2').value) || (document.getElementById('point1').value));
+    const recojo1 = document.getElementById('point3').value;
+    const recojo2 = document.getElementById('point2').value; 
+    const recojo3 = document.getElementById('point1').value;
     
     if (!name || !phone || !recojo) {
         alert('Por favor completa todos los campos obligatorios (*)');
+        return;
+    }
+    
+    if (recojo1==true) {
+        recojo=recojo1;
+        return;
+    }
+    if (recojo2==true) {
+        recojo=recojo2;
+        return;
+    }
+    if (recojo3==true) {
+        recojo=recojo3;
         return;
     }
     
