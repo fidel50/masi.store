@@ -407,18 +407,10 @@ function confirmOrder() {
     //const address = document.getElementById('customerAddress').value;
     const email = document.getElementById('customerEmail').value || 'No especificado';
     //const notes = document.getElementById('customerNotes').value || 'Sin notas adicionales';
-    const deliveryOptions = document.querySelectorAll('input[name="deliveryPoint"]');
-    //const selectedDeliveryPoint = document.getElementById('selectedDeliveryPoint');
-    //alert(deliveryOptions);
-    const recojo = document.getElementById('point1').value;
-    deliveryOptions.forEach(option => {
-        option.addEventListener('change', function () {
-            //selectedDeliveryPoint.textContent = "Elegiste: " + this.value;
-            recojo = this.value; // aquí puedes usar el valor
-        });
-    });
+    const recojo = document.querySelector('input[name="deliveryPoint"]:checked').value;
+   
     
-    if (!name || !phone) {
+    if (!name || !phone || !recojo) {
         alert('Por favor completa todos los campos obligatorios (*)');
         return;
     }
