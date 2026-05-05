@@ -7,12 +7,49 @@ const products = [
   { id: 5, name: "Llavero Stich ", description: "Lleva contigo la ternura de Stitch en un llavero irresistible, colorido y coleccionable que roba miradas, transmite alegría y convierte cada detalle cotidiano en un toque único de  magia. ", price: 10, category: "Llaveros ", image: "imagenes/stich.jpg ", stock: 12 },
 ];
 
+// 🗄️ Clave para localStorage (Persistencia de Stock)
+const STOCK_STORAGE_KEY = 'masi_store_stock_v1';
+
+// 🔽 Cargar stock desde localStorage al iniciar
+function loadStockFromStorage() {
+  try {
+    const savedStock = localStorage.getItem(STOCK_STORAGE_KEY);
+    if (savedStock) {
+      const stockMap = JSON.parse(savedStock);
+      products.forEach(product => {
+        if (stockMap[product.id] !== undefined) {
+          product.stock = stockMap[product.id];
+        }
+      });
+    } else {
+      // Primera visita: guardar stock inicial por defecto
+      saveStockToStorage();
+    }
+  } catch (e) {
+    console.warn('No se pudo acceder a localStorage. El stock se reiniciará en cada recarga.', e);
+  }
+}
+
+// 💾 Guardar stock actualizado en localStorage
+function saveStockToStorage() {
+  try {
+    const stockMap = {};
+    products.forEach(product => {
+      stockMap[product.id] = product.stock;
+    });
+    localStorage.setItem(STOCK_STORAGE_KEY, JSON.stringify(stockMap));
+  } catch (e) {
+    console.warn('Error al guardar stock en localStorage:', e);
+  }
+}
+
 // Carrito de compras
 let cart = [];
 const SHIPPING_COST = 0;
 
 // Inicialización al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
+  loadStockFromStorage(); // ⬅️ Recuperar stock persistente antes de renderizar
   renderProducts(products);
   setupEventListeners();
   updateCartCount();
@@ -289,7 +326,7 @@ function confirmOrder() {
   }
 
   // ==========================================
-  // 📦 ACTUALIZACIÓN DE STOCK SOLICITADA
+  // 📦 ACTUALIZACIÓN Y PERSISTENCIA DE STOCK
   // ==========================================
   cart.forEach(cartItem => {
     const product = products.find(p => p.id === cartItem.id);
@@ -297,7 +334,8 @@ function confirmOrder() {
       product.stock = Math.max(0, product.stock - cartItem.quantity);
     }
   });
-
+  saveStockToStorage(); // 💾 Guardar stock actualizado en localStorage
+  
   // Actualizar vista del catálogo manteniendo el filtro activo
   const activeCategoryBtn = document.querySelector('.category-btn.active');
   const activeCategory = activeCategoryBtn ? activeCategoryBtn.getAttribute('data-category') : 'all';
@@ -332,10 +370,9 @@ function confirmOrder() {
   whatsappMessage += `• *TOTAL A PAGAR: Bs. ${total.toFixed(2)}*\n\n`;
 
   whatsappMessage += `*INSTRUCCIONES:*\n`;
-  whatsappMessage += `1. Realize el pago al Codigo QR que le enviemos\n`;
-  whatsappMessage += `2. Envie el Comprovante de Pago + El numero de Pedido\n`;
-  whatsappMessage += `3. Se coordinara el dia de entrega en el grupo - Unase por Favor\n`;
-  whatsappMessage += `4. Muchas gracias por su compra.\n\n`;
+  whatsappMessage += `1. Realize el pago al Codigo QR que le enviaremos\n`;
+  whatsappMessage += `2. Se coordinara el dia de entrega en el grupo - Unase por Favor\n`;
+  whatsappMessage += `3. Muchas gracias por su compra.\n\n`;
   whatsappMessage += ` *Fecha y hora:* ${new Date().toLocaleString('es-BO')}\n`;
   whatsappMessage += ` *Número de pedido:* ${orderNumber}`;
 
